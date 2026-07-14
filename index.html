@@ -12,6 +12,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infrabaldan — Your Clients Are Already Asking for Infrared | Baldan</title>
   <meta name="description" content="Turn demand for infrared into a high-margin weekly revenue stream with Infrabaldan. Near and far infrared in one guided session — designed and manufactured in Italy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Baldan" />
+  <meta property="og:title" content="Infrabaldan — Your Clients Are Already Asking for Infrared | Baldan" />
+  <meta property="og:description" content="Turn demand for infrared into a high-margin weekly revenue stream with Infrabaldan. Near and far infrared in one guided session — designed and manufactured in Italy." />
+  <meta property="og:image" content="assets/ba-1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Infrabaldan — Your Clients Are Already Asking for Infrared | Baldan" />
+  <meta name="twitter:description" content="Turn demand for infrared into a high-margin weekly revenue stream with Infrabaldan. Near and far infrared in one guided session — designed and manufactured in Italy." />
+  <meta name="twitter:image" content="assets/ba-1.jpg" />
   <link rel="icon" href="assets/favicon.png" />
   <!-- Google tag (gtag.js) — GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRX2QPDLYJ"></script>
@@ -21,29 +30,10 @@
     gtag('js', new Date());
     gtag('config', 'G-KRX2QPDLYJ');
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bordeaux: '#4D0C12',
-            darkmaroon: '#1E100F',
-            maroon2: '#300F11',
-            cream: '#FDF9F9',
-            graybg: '#E5E2E2',
-          },
-          fontFamily: {
-            serif: ['"PT Serif"', 'Georgia', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
+  <link rel="stylesheet" href="assets/tailwind.css" />
   <style>
     html,body{overflow-x:clip;}
     body { background-color: #FDF9F9; }
@@ -52,6 +42,9 @@
     .ba-track{display:flex;transition:transform .5s ease;}
     .ba-slide{flex:0 0 100%;}
     @media(min-width:768px){.ba-slide{flex:0 0 33.3333%;}}
+      @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}}
+      html{scroll-behavior:smooth;}
+    #pilot,#aura,#about{scroll-margin-top:80px;}
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -77,12 +70,19 @@
   <!-- ===================== STICKY NAV ===================== -->
   <header class="sticky top-0 z-50 grad-strip text-white">
     <div class="max-w-[1180px] mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="block">
-        <img src="assets/logo.png" alt="Baldan — A World of Beauty" class="h-9 w-auto" style="filter:brightness(0) invert(1);" />
+      <a href="#about" class="block">
+        <img width="1080" height="240" src="assets/logo.png" alt="Baldan — A World of Beauty" class="h-9 w-auto" style="filter:brightness(0) invert(1);" />
       </a>
-      <a href="#form" class="border border-white/60 px-4 py-2 text-[10px] font-semibold tracking-wide hover:bg-white hover:text-bordeaux transition">
+      <div class="flex items-center gap-6 md:gap-7">
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-[11px] font-semibold tracking-[0.16em] text-white/80">
+          <a href="#pilot" class="hover:text-white transition">US PILOT</a>
+          <a href="#aura" class="hover:text-white transition">AURA</a>
+          <a href="#about" class="hover:text-white transition">ABOUT BALDAN</a>
+        </nav>
+        <a href="#form" class="border border-white/60 px-4 py-2 text-[10px] font-semibold tracking-wide hover:bg-white hover:text-bordeaux transition">
         BOOK YOUR CONSULTATION
       </a>
+      </div>
     </div>
   </header>
 
@@ -129,11 +129,11 @@
         <input type="hidden" name="variant" value="B-callmeback" />
         <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="hp_company" tabindex="-1" autocomplete="off" /></div>
         <div class="grid grid-cols-2 gap-3.5">
-          <input type="text" name="firstName" required placeholder="First Name *" autocomplete="given-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
-          <input type="text" name="lastName" required placeholder="Last Name *" autocomplete="family-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
+          <input type="text" name="firstName" required placeholder="First Name *" autocomplete="given-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="First Name" />
+          <input type="text" name="lastName" required placeholder="Last Name *" autocomplete="family-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Last Name" />
         </div>
-        <input type="email" name="email" required placeholder="Business Email *" autocomplete="email" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
-        <input type="tel" name="phone" required placeholder="Phone Number *" autocomplete="tel" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
+        <input type="email" name="email" required placeholder="Business Email *" autocomplete="email" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Business Email" />
+        <input type="tel" name="phone" required placeholder="Phone Number *" autocomplete="tel" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Phone Number" />
         <div class="pt-1">
           <label class="block text-[12px] font-bold text-darkmaroon mb-2">Has your business been open for more than a year? *</label>
           <div class="flex gap-6">
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="pt-2 flex items-start gap-2.5">
-          <input type="checkbox" name="termsAccepted" value="Yes" required class="mt-1 accent-bordeaux shrink-0" />
+          <input type="checkbox" name="termsAccepted" value="Yes" required aria-label="I have read and accept the Privacy Policy" class="mt-1 accent-bordeaux shrink-0" />
           <div>
             <span class="text-[12px] font-bold text-darkmaroon">I have read and accept the <a href="https://www.baldangroup.com/en/privacy-policy/" target="_blank" rel="noopener" class="underline underline-offset-2 text-darkmaroon hover:text-bordeaux transition">Privacy Policy</a>. *</span>
             <p class="text-[10px] text-darkmaroon/60 mt-1.5 leading-relaxed">
@@ -166,7 +166,7 @@
   <section class="bg-white border-y border-black/10">
     <div class="max-w-[880px] mx-auto px-6 py-14 text-center">
       <div class="text-[10px] tracking-[0.3em] font-semibold text-darkmaroon/50">RECOGNIZED BY AMERICA&rsquo;S LARGEST AESTHETICS COMMUNITY</div>
-      <img src="assets/realself-logo.png" alt="RealSelf" class="h-8 md:h-10 w-auto mx-auto mt-6" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'font-bold text-darkmaroon text-[34px] tracking-tight',textContent:'RealSelf'}))" />
+      <img width="1085" height="147" src="assets/realself-logo.png" alt="RealSelf" class="h-8 md:h-10 w-auto mx-auto mt-6" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'font-bold text-darkmaroon text-[34px] tracking-tight',textContent:'RealSelf'}))" />
       <h2 class="font-serif font-bold text-[26px] md:text-[34px] text-darkmaroon mt-7 leading-snug">Baldan Technologies are the most requested aesthetic technologies in the United States, according to RealSelf.</h2>
       <p class="text-[13px] text-darkmaroon/60 mt-5 max-w-[560px] mx-auto">RealSelf is the largest U.S. community for aesthetic treatments, with <strong class="text-darkmaroon">300,000+ verified patient reviews</strong> guiding millions of treatment decisions every year.</p>
     </div>
@@ -219,10 +219,10 @@
       <div class="relative">
         <div class="overflow-hidden rounded-xl">
           <div id="baTrack" class="ba-track">
-            <div class="ba-slide px-1.5"><img src="assets/ba-1.jpg" alt="Infrabaldan before and after — back" class="w-full rounded-lg object-cover" loading="lazy" /></div>
-            <div class="ba-slide px-1.5"><img src="assets/ba-2.jpg" alt="Infrabaldan before and after — front" class="w-full rounded-lg object-cover" loading="lazy" /></div>
-            <div class="ba-slide px-1.5"><img src="assets/ba-3.jpg" alt="Infrabaldan before and after — profile" class="w-full rounded-lg object-cover" loading="lazy" /></div>
-            <div class="ba-slide px-1.5"><img src="assets/ba-4.jpg" alt="Infrabaldan before and after — side" class="w-full rounded-lg object-cover" loading="lazy" /></div>
+            <div class="ba-slide px-1.5"><img width="1170" height="1052" src="assets/ba-1.jpg" alt="Infrabaldan before and after — back" class="w-full rounded-lg object-cover" loading="lazy" /></div>
+            <div class="ba-slide px-1.5"><img width="1170" height="1052" src="assets/ba-2.jpg" alt="Infrabaldan before and after — front" class="w-full rounded-lg object-cover" loading="lazy" /></div>
+            <div class="ba-slide px-1.5"><img width="1170" height="1052" src="assets/ba-3.jpg" alt="Infrabaldan before and after — profile" class="w-full rounded-lg object-cover" loading="lazy" /></div>
+            <div class="ba-slide px-1.5"><img width="1170" height="1052" src="assets/ba-4.jpg" alt="Infrabaldan before and after — side" class="w-full rounded-lg object-cover" loading="lazy" /></div>
           </div>
         </div>
         <button type="button" id="baPrev" aria-label="Previous" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md text-bordeaux font-bold hover:bg-white/90 transition">&#8249;</button>
@@ -264,7 +264,7 @@
   </script>
 
   <!-- ===================== THE OFFER (RISK REVERSAL, BELOW HERO) ===================== -->
-  <section class="bg-darkmaroon text-white">
+  <section id="pilot" class="bg-darkmaroon text-white">
     <div class="max-w-[1180px] mx-auto px-6 py-14">
       <div class="mb-9 flex items-center gap-4 text-white">
         <span class="text-[11px] tracking-[0.28em] font-bold text-white/60">LIMITED-TIME PARTNER OFFER</span>
@@ -429,7 +429,7 @@
           <div class="mt-2 text-[13px] md:text-[15px] text-white/80">the average cost of a U.S. marketing agency*</div>
           <h2 class="font-serif font-bold text-[26px] md:text-[34px] mt-6 leading-snug">Wiped out by AURA — your new marketing agency, included for 12 months.</h2>
           <p class="mt-5 text-[15px] leading-relaxed text-white/85 max-w-[600px]">
-            Aura is an AI-empowered platform that brings you new clients automatically: it creates and runs your ad
+            Aura is your new AI-powered marketing engine, included: it creates and runs your ad
             campaigns on Meta — Facebook and Instagram — and optimizes them on its own, while you do what you do best.
           </p>
           <div class="mt-5 flex items-center gap-2.5 text-[13px] text-white/70">
@@ -444,7 +444,7 @@
           <p class="mt-5 text-[10px] text-white/40">*Industry estimate. Ad budget excluded. Terms and conditions apply.</p>
         </div>
         <div class="lg:col-span-5">
-          <img src="assets/aura-campaigns.png" alt="The Aura dashboard — one campaign live on Meta, one launching"
+          <img width="900" height="1000" src="assets/aura-campaigns.png" alt="The Aura dashboard — one campaign live on Meta, one launching"
                class="w-full max-w-[420px] mx-auto rounded-2xl shadow-2xl" loading="lazy" />
         </div>
       </div>
@@ -452,11 +452,11 @@
   </section>
 
   <!-- ===================== HERITAGE / TRUST ===================== -->
-  <section class="bg-graybg">
+  <section id="about" class="bg-graybg">
     <div class="max-w-[1180px] mx-auto px-6 py-20">
       <div class="flex flex-col md:flex-row md:items-center gap-10 md:gap-16">
         <div class="shrink-0">
-          <img src="assets/logo.png" alt="Baldan — A World of Beauty" class="h-16 w-auto mx-auto md:mx-0" />
+          <img width="1080" height="240" src="assets/logo.png" alt="Baldan — A World of Beauty" class="h-16 w-auto mx-auto md:mx-0" />
         </div>
         <h2 class="font-serif font-bold text-[28px] md:text-[34px] leading-[1.15] text-darkmaroon">
           Over 45 years of Italian Medical &amp; Technological Excellence
@@ -464,7 +464,7 @@
       </div>
 
       <div class="mt-12 overflow-hidden rounded-lg shadow-xl">
-        <img src="assets/sede.jpeg" alt="Baldan headquarters, Italy" class="w-full h-[260px] md:h-[320px] object-cover" />
+        <img width="2048" height="854" src="assets/sede.jpeg" alt="Baldan headquarters, Italy" class="w-full h-[260px] md:h-[320px] object-cover" />
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center mt-16">
@@ -506,11 +506,11 @@
         <input type="hidden" name="variant" value="B-callmeback" />
         <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;"><input type="text" name="hp_company" tabindex="-1" autocomplete="off" /></div>
         <div class="grid grid-cols-2 gap-3.5">
-          <input type="text" name="firstName" required placeholder="First Name *" autocomplete="given-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
-          <input type="text" name="lastName" required placeholder="Last Name *" autocomplete="family-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
+          <input type="text" name="firstName" required placeholder="First Name *" autocomplete="given-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="First Name" />
+          <input type="text" name="lastName" required placeholder="Last Name *" autocomplete="family-name" class="bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Last Name" />
         </div>
-        <input type="email" name="email" required placeholder="Business Email *" autocomplete="email" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
-        <input type="tel" name="phone" required placeholder="Phone Number *" autocomplete="tel" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux" />
+        <input type="email" name="email" required placeholder="Business Email *" autocomplete="email" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Business Email" />
+        <input type="tel" name="phone" required placeholder="Phone Number *" autocomplete="tel" class="w-full bg-white text-[13px] text-gray-700 px-3.5 py-3 outline-none rounded-sm border border-black/10 placeholder:text-gray-400 focus:border-bordeaux"  aria-label="Phone Number" />
         <div class="pt-1">
           <label class="block text-[12px] font-bold text-darkmaroon mb-2">Has your business been open for more than a year? *</label>
           <div class="flex gap-6">
@@ -586,6 +586,17 @@
         payload.append("submittedAt",
           now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate()) +
           " " + pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds()));
+
+
+        // --- Consenso privacy: registro completo per il Google Sheet ---
+        var _terms = form.querySelector('[name="termsAccepted"]');
+        payload.set("consent", (_terms && _terms.checked) ? "Yes" : "No");
+        payload.append("consentStatement", "I have read and accept the Privacy Policy. The data subject expresses explicit, free and informed consent to the processing of personal data pursuant to Articles 13 and 14 of the GDPR.");
+        payload.append("consentVersion", "privacy-2026-07");
+        payload.append("privacyPolicyUrl", "https://www.baldangroup.com/en/privacy-policy/");
+        payload.append("consentTimestampISO", new Date().toISOString());
+        payload.append("pageUrl", window.location.href);
+        payload.append("userAgent", navigator.userAgent);
 
         fetch(FORM_ENDPOINT, { method: "POST", body: payload })
           .then(function () {
